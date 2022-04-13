@@ -13,5 +13,5 @@ jobs:
     environment: ${{ inputs.ENV }}
     steps:
     - run: |
-        echo ${{ env.NAME }}
+        echo ${{ secrets.NAME }}
         echo ${{ inputs.ENV }}
