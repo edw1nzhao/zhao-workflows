@@ -23,4 +23,4 @@ jobs:
           echo bye
         fi
 
-        echo ${{ matrix.environments }}
+        echo ${{ inputs.ENV }}
