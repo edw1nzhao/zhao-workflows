@@ -2,25 +2,24 @@ name: Template
 
 on:
   workflow_call:
-    inputs:
+    secrets:
       ENV:
         required: true
-        type: string
 
 jobs:
   echo:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.ENV }}
+    environment: ${{ secrets.ENV }}
     steps:
     - run: |
-        if [[ "${{ inputs.ENV }}" == "dev" ]]
+        if [[ "${{ secrets.ENV }}" == "dev" ]]
         then
           echo hi
         fi
 
-        if [[ "${{ inputs.ENV }}" == "workflow" ]]
+        if [[ "${{ secrets.ENV }}" == "workflow" ]]
         then
           echo bye
         fi
 
-        echo ${{ inputs.ENV }}
+        echo ${{ secrets.ENV }}
