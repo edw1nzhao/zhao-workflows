@@ -1,0 +1,17 @@
+name: Template
+
+on:
+  workflow_call:
+    inputs:
+      ENV:
+        required: true
+        type: string
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENV }}
+    steps:
+    - run: |
+        echo ${{ env.NAME }}
+        echo ${{ inputs.ENV }}
