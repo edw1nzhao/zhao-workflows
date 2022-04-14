@@ -11,20 +11,27 @@ on:
         required: true
 jobs:
   echo:
+    # runs-on: ubuntu-latest
+    # environment: ${{ inputs.ENV }}
+    # steps:
+    # - run: |
+    #     # if [[ "${{ secrets.NAME }}" == "dev" ]]
+    #     # then
+    #     #   echo deone
+    #     # fi
+
+    #     # if [[ "${{ secrets.NAME }}" == "workflow" ]]
+    #     # then
+    #     #   echo stone
+    #     # fi
+
+    #     # echo ${{ secrets.NAME }}
+
+    #     echo ${{ inputs.ENV }}
+  echo:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.ENV }}
     steps:
     - run: |
-        # if [[ "${{ secrets.NAME }}" == "dev" ]]
-        # then
-        #   echo deone
-        # fi
-
-        # if [[ "${{ secrets.NAME }}" == "workflow" ]]
-        # then
-        #   echo stone
-        # fi
-
-        # echo ${{ secrets.NAME }}
-
-        echo ${{ inputs.ENV }}
+        export SHA=${{ github.event.pull_request.head.sha }}
+        export SHORT_SHA=${SHA::7}
+        echo $SHORT_SHA
