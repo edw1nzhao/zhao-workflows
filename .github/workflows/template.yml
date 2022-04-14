@@ -13,12 +13,12 @@ jobs:
     environment: ${{ inputs.ENV }}
     steps:
     - run: |
-        if [[ "${{ inputs.ENV }}" == "dev" ]]
+        if [[ "${{ secrets.NAME }}" == "dev" ]]
         then
           echo hi
         fi
 
-        if [[ "${{ inputs.ENV }}" == "workflow" ]]
+        if [[ "${{ secrets.NAME }}" == "workflow" ]]
         then
           echo bye
         fi
