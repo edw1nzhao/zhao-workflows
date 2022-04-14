@@ -30,7 +30,4 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        export SHA=${{ inputs.ENV }}
-        export SHORT_SHA=${SHA::7}
-        echo $SHORT_SHA
+    - run: echo ${{ inputs.ENV }}
