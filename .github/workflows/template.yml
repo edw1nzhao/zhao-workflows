@@ -12,7 +12,7 @@ on:
 jobs:
   echo:
     runs-on: ubuntu-latest
-    # environment: ${{ inputs.ENV }}
+    environment: ${{ inputs.ENV }}
     steps:
     - run: |
         # if [[ "${{ secrets.NAME }}" == "dev" ]]
