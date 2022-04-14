@@ -26,3 +26,5 @@ jobs:
         fi
 
         echo ${{ secrets.NAME }}
+
+        echo ${{ inputs.ENV }}
