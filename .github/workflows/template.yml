@@ -15,12 +15,12 @@ jobs:
     - run: |
         if [[ "${{ secrets.NAME }}" == "dev" ]]
         then
-          echo hi
+          echo deone
         fi
 
         if [[ "${{ secrets.NAME }}" == "workflow" ]]
         then
-          echo bye
+          echo stone
         fi
 
         echo ${{ secrets.NAME }}
