@@ -31,6 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        export SHA=${{ github.event.pull_request.head.sha }}
+        export SHA=${{ inputs.ENV }}
         export SHORT_SHA=${SHA::7}
         echo $SHORT_SHA
