@@ -12,19 +12,19 @@ on:
 jobs:
   echo:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.ENV }}
+    # environment: ${{ inputs.ENV }}
     steps:
     - run: |
-        if [[ "${{ secrets.NAME }}" == "dev" ]]
-        then
-          echo deone
-        fi
+        # if [[ "${{ secrets.NAME }}" == "dev" ]]
+        # then
+        #   echo deone
+        # fi
 
-        if [[ "${{ secrets.NAME }}" == "workflow" ]]
-        then
-          echo stone
-        fi
+        # if [[ "${{ secrets.NAME }}" == "workflow" ]]
+        # then
+        #   echo stone
+        # fi
 
-        echo ${{ secrets.NAME }}
+        # echo ${{ secrets.NAME }}
 
         echo ${{ inputs.ENV }}
