@@ -6,7 +6,9 @@ on:
       ENV:
         required: true
         type: string
-
+    secrets:
+      NAME:
+        required: true
 jobs:
   echo:
     runs-on: ubuntu-latest
