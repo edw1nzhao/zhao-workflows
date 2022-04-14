@@ -6,6 +6,9 @@ on:
       ENV:
         required: true
         type: string
+      SOMETHING:
+        required: true
+        type: string
     secrets:
       NAME:
         required: true
@@ -30,4 +33,4 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ inputs.ENV }}
+    - run: echo ${{ inputs.SOMETHING }}-${{ inputs.ENV }}
