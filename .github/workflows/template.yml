@@ -10,7 +10,7 @@ on:
         required: true
         type: string
     secrets:
-      NAME:
+      EDWIN:
         required: true
 jobs:
   test:
