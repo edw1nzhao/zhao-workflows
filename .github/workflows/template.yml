@@ -13,24 +13,22 @@ on:
       NAME:
         required: true
 jobs:
-    # runs-on: ubuntu-latest
-    # environment: ${{ inputs.ENV }}
-    # steps:
-    # - run: |
-    #     # if [[ "${{ secrets.NAME }}" == "dev" ]]
-    #     # then
-    #     #   echo deone
-    #     # fi
-
-    #     # if [[ "${{ secrets.NAME }}" == "workflow" ]]
-    #     # then
-    #     #   echo stone
-    #     # fi
-
-    #     # echo ${{ secrets.NAME }}
-
-    #     echo ${{ inputs.ENV }}
-  echo:
+  test:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.ENV }}
     steps:
-    - run: echo ${{ inputs.SOMETHING }}-${{ inputs.ENV }}
+    - run: |
+        if [[ "${{ secrets.NAME }}" == "dev" ]]
+        then
+          echo deone
+        fi
+
+        if [[ "${{ secrets.EDWIN }}" == "cool" ]]
+        then
+          echo stone
+        fi
+
+  # echo:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - run: echo ${{ secrets.EDWIN }}
